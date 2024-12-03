@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/jella/OneDrive/Desktop/COP3530-Project-3-Signals-of-Suspicion
+# Install script for directory: C:/Users/megle/CLionProjects/COP3530-Project-3-Signals-of-Suspicion
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/jella/OneDrive/Desktop/COP3530-Project-3-Signals-of-Suspicion/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/megle/CLionProjects/COP3530-Project-3-Signals-of-Suspicion/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

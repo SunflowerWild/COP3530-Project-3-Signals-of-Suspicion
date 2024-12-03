@@ -1,9 +1,12 @@
 # ninja log v5
-1	389	7548964570820502	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	823162a3c5146790
-391	744	7548964574332440	COP3530_Project_3_Signals_of_Suspicion.exe	4368995692196367
-1	1124	7549005792725100	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	6e98d6769f5fcaf
-1127	1395	7549005795347846	COP3530_Project_3_Signals_of_Suspicion.exe	d108632879220669
-9	1578	7549010241375612	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	6e98d6769f5fcaf
-1579	1841	7549010243956687	COP3530_Project_3_Signals_of_Suspicion.exe	d108632879220669
 8	1378	7549014377080420	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	6e98d6769f5fcaf
 1387	1638	7549014379591193	COP3530_Project_3_Signals_of_Suspicion.exe	d108632879220669
+1	332	7549052117038049	build.ninja	7e40c076bf21f2d7
+28	445	7549052123051492	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	823162a3c5146790
+2	325	7549052670266184	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	823162a3c5146790
+9	467	7549052671681327	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/quicksort.cpp.obj	50385e538f595154
+3	301	7549054593078591	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	823162a3c5146790
+2	386	7549055145560328	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/quicksort.cpp.obj	50385e538f595154
+2	297	7549056487615313	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	823162a3c5146790
+6	426	7549056488930608	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/quicksort.cpp.obj	50385e538f595154
+426	535	7549056489985822	COP3530_Project_3_Signals_of_Suspicion.exe	1fe902ea72996f42
