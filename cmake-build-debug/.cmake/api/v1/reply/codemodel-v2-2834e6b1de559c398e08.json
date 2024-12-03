@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "COP3530_Project_3_Signals_of_Suspicion",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "COP3530_Project_3_Signals_of_Suspicion::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-COP3530_Project_3_Signals_of_Suspicion-Debug-b1a711ebbe18b7cfa9d3.json",
+					"name" : "COP3530_Project_3_Signals_of_Suspicion",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/megle/CLionProjects/COP3530-Project-3-Signals-of-Suspicion/cmake-build-debug",
+		"source" : "C:/Users/megle/CLionProjects/COP3530-Project-3-Signals-of-Suspicion"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
