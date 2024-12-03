@@ -29,7 +29,7 @@ vector <DataProcessor::DatasetRow> DataProcessor::readDataset(const string& inpu
     ifstream file(inputFilename);
     if (!file.is_open()) {
         cerr << "Error: Could not open file " << inputFilename << endl;
-        exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE); // Exit the program if the file cannot be opened
     }
 
     string line, combinedLine;
@@ -42,11 +42,11 @@ vector <DataProcessor::DatasetRow> DataProcessor::readDataset(const string& inpu
 
         if (!combinedLine.empty()) {
             line = combinedLine + line; // Combine with previous incomplete line
-            combinedLine.clear();
+            combinedLine.clear(); // Clear the buffer after merging
         }
 
         size_t commaPos = line.rfind(',');
-        if (commaPos != string::npos) {
+        if (commaPos != string::npos) { // Ensure a comma was found
             string url = line.substr(0, commaPos);
             string statusStr = line.substr(commaPos + 1);
 
@@ -57,6 +57,7 @@ vector <DataProcessor::DatasetRow> DataProcessor::readDataset(const string& inpu
                 cerr << "Warning: Malformed row, skipping: " << line << endl;
             }
         } else {
+             // Handle rows without a valid comma-separated structure
             cerr << "Warning: Malformed row, skipping: " << line << endl;
         }
     }
