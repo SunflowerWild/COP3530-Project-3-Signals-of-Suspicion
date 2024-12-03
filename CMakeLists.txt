@@ -8,4 +8,6 @@ include_directories(.)
 add_executable(COP3530_Project_3_Signals_of_Suspicion
         main.cpp
         quicksort.h
-        quicksort.cpp)
+        quicksort.cpp
+        heapsort.h
+        heapsort.cpp)
