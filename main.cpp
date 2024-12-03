@@ -6,6 +6,7 @@
 #include <vector>
 #include "quicksort.h"
 #include "heapsort.h"
+#include "dataprocessor.h"
 
 using namespace std;
 
@@ -38,15 +39,16 @@ int main() {
     else if (choice == 2) {
         string inputFilename = "project3b_data.csv";         // Input file name
         string outputFilename = "heap_sorted_data_urls.csv";     // Output file name
+        DataProcessor dataObj;
         HeapSort sorter;
 
-        vector<HeapSort::DatasetRow> dataset = sorter.readDataset(inputFilename);
+        vector<DataProcessor::DatasetRow> dataset = dataObj.readDataset(inputFilename);
 
         cout <<"Sorting dataset using Heap Sort..." << endl;
         sorter.heapSort(dataset);
 
         cout << "Writing sorted dataset to: " << outputFilename << endl;
-        sorter.writeDataset(outputFilename, dataset);
+        dataObj.writeDataset(outputFilename, dataset);
 
         cout << "Sorting completed successfully!" << endl;
 

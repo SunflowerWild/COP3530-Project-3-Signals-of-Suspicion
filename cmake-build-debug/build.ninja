@@ -70,6 +70,13 @@ build CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/heapsort.cpp.obj: CX
   OBJECT_DIR = CMakeFiles\COP3530_Project_3_Signals_of_Suspicion.dir
   OBJECT_FILE_DIR = CMakeFiles\COP3530_Project_3_Signals_of_Suspicion.dir
 
+build CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/dataprocessor.cpp.obj: CXX_COMPILER__COP3530_Project_3_Signals_of_Suspicion_unscanned_Debug C$:/Users/avick_rk40yb1/CLionProjects/cppProject/COP3530/COP3530-Project-3-Signals-of-Suspicion/dataprocessor.cpp || cmake_object_order_depends_target_COP3530_Project_3_Signals_of_Suspicion
+  DEP_FILE = CMakeFiles\COP3530_Project_3_Signals_of_Suspicion.dir\dataprocessor.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/avick_rk40yb1/CLionProjects/cppProject/COP3530/COP3530-Project-3-Signals-of-Suspicion/.
+  OBJECT_DIR = CMakeFiles\COP3530_Project_3_Signals_of_Suspicion.dir
+  OBJECT_FILE_DIR = CMakeFiles\COP3530_Project_3_Signals_of_Suspicion.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target COP3530_Project_3_Signals_of_Suspicion
@@ -78,7 +85,7 @@ build CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/heapsort.cpp.obj: CX
 #############################################
 # Link the executable COP3530_Project_3_Signals_of_Suspicion.exe
 
-build COP3530_Project_3_Signals_of_Suspicion.exe: CXX_EXECUTABLE_LINKER__COP3530_Project_3_Signals_of_Suspicion_Debug CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/quicksort.cpp.obj CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/heapsort.cpp.obj
+build COP3530_Project_3_Signals_of_Suspicion.exe: CXX_EXECUTABLE_LINKER__COP3530_Project_3_Signals_of_Suspicion_Debug CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/quicksort.cpp.obj CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/heapsort.cpp.obj CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/dataprocessor.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\COP3530_Project_3_Signals_of_Suspicion.dir

@@ -10,4 +10,6 @@ add_executable(COP3530_Project_3_Signals_of_Suspicion
         quicksort.h
         quicksort.cpp
         heapsort.h
-        heapsort.cpp)
+        heapsort.cpp
+        dataprocessor.h
+        dataprocessor.cpp)

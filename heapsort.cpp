@@ -5,83 +5,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <fstream>
-#include <algorithm>
 #include "heapsort.h"
+#include "dataprocessor.h"
 using namespace std;
-
-// Function to clean a string by removing corrupted characters
-string HeapSort::cleanString(const string& str) {
-    string cleaned;
-    for (char c : str) {
-        if (isprint(c) || c == '\n') { // Allow printable characters and newlines
-            cleaned += c;
-        }
-    }
-    return cleaned;
-}
-
-// Function to read dataset from a CSV file
-vector <HeapSort::DatasetRow> HeapSort::readDataset(const string& inputFilename) {
-    vector<HeapSort::DatasetRow> dataset;
-    ifstream file(inputFilename);
-    if (!file.is_open()) {
-        cerr << "Error: Could not open file " << inputFilename << endl;
-        exit(EXIT_FAILURE);
-    }
-
-    string line, combinedLine;
-    while (getline(file, line)) {
-        line = cleanString(line); // Clean corrupted characters
-        if (count(line.begin(), line.end(), ',') < 1) {
-            combinedLine += line; // Append incomplete line
-            continue;
-        }
-
-        if (!combinedLine.empty()) {
-            line = combinedLine + line; // Combine with previous incomplete line
-            combinedLine.clear();
-        }
-
-        size_t commaPos = line.rfind(',');
-        if (commaPos != string::npos) {
-            string url = line.substr(0, commaPos);
-            string statusStr = line.substr(commaPos + 1);
-
-            try {
-                int status = stoi(statusStr); // Parse status as integer
-                dataset.push_back({url, status});
-            } catch (const exception& e) {
-                cerr << "Warning: Malformed row, skipping: " << line << endl;
-            }
-        } else {
-            cerr << "Warning: Malformed row, skipping: " << line << endl;
-        }
-    }
-
-    file.close();
-    return dataset;
-}
-
-// Function to write sorted dataset to a CSV file
-void HeapSort:: writeDataset(const string& filename, const vector<DatasetRow>& dataset) {
-    ofstream file(filename);
-    if (!file.is_open()) {
-        cerr << "Error: Could not open file " << filename << " for writing." << endl;
-        exit(EXIT_FAILURE);
-    }
-
-    for (const auto& row : dataset) {
-        file << row.url << "," << row.status << "\n";
-    }
-
-    file.close();
-}
 
 // Is done after deleting to correct the heap
 // Corrects a path from the new root to a leaf.
 // Parameters: Aman's Discussion 6 Slides-Heaps & Priority Queues, Slide #71
-void HeapSort::heapifyDown(vector<DatasetRow>& arr, int size, int index){
+void HeapSort::heapifyDown(vector<DataProcessor::DatasetRow>& arr, int size, int index){
 
     // "index" moves down the heap to restore the proper form.
 
@@ -141,7 +72,7 @@ void HeapSort::heapifyDown(vector<DatasetRow>& arr, int size, int index){
     }
 }
 
-void HeapSort::heapSort(vector<DatasetRow>& arr) {
+void HeapSort::heapSort(vector<DataProcessor::DatasetRow>& arr) {
     // Get the number of elements in the vector
     int n = arr.size();
 
@@ -163,7 +94,7 @@ void HeapSort::heapSort(vector<DatasetRow>& arr) {
     }
 }
 
-string HeapSort::extractMax(vector<DatasetRow>& arr){
+string HeapSort::extractMax(vector<DataProcessor::DatasetRow>& arr){
     // Check if the vector is empty
     if (arr.empty()) {
         throw std::runtime_error("Heap is empty");
