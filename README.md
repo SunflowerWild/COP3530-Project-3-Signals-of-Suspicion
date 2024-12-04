@@ -16,17 +16,17 @@ heapsort.h / heapsort.cpp: Heap Sort implementation.
 dataprocessor.h / dataprocessor.cpp: Utilities for reading and writing CSV data.
 project3b_data.csv: Input dataset file.
 
-##The program will present a menu:
+**The program will present a menu:**
 
 Choose 1 for Quick Sort.
 Choose 2 for Heap Sort.
 Choose 3 to exit the program.
 The sorted data will be saved to:
 
-##Quick Sort:
+*Quick Sort:*
 quicksort_suspicious_urls.csv
 quicksort_legitimate_urls.csv
-##Heap Sort:
+*Heap Sort:*
 heapsort_suspicious_urls.csv
 heapsort_legitimate_urls.csv
 Error Handling
@@ -36,3 +36,9 @@ File Access Issues: If a file cannot be opened, the program will terminate with 
 <h3>Known Limitations</h3>
 The program assumes the input file is named project3b_data.csv.
 It currently does not support dynamically changing the input or output file names via command-line arguments.
+
+<h4>Credits</h4>
+Heap Sort: Ashlynn Vick
+Quick Sort and Data Processing: Jellane Fauni
+GitHub Repository, and Video: Megan Mendez
+Report and code cleaning/debugging: All
