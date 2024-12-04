@@ -20,35 +20,60 @@ int main() {
             << "We will be comparing the Heap sort and Quick Sort algorithms to compare their performance while completing the same task \n Enter 1 for Quick Sort and 2 for Heap Sort"
             << endl;
     cin >> choice;
+
     if (choice == 1) {
         string inputFilename = "project3b_data.csv";         // Input file name
-        string outputFilename = "quick_sorted_data_urls.csv";     // Output file name
+        //string outputFilename = "quick_sorted_data_urls.csv";     // Output file name
+        DataProcessor dataObj;
         QuickSort sorter;
 
-        vector<QuickSort::DatasetRow> dataset = sorter.readDataset(inputFilename);
+        vector<DataProcessor::DatasetRow> dataset = dataObj.readDataset(inputFilename);
+
+        vector<DataProcessor::DatasetRow> legitimate, suspicious;
+        for (DataProcessor::DatasetRow pair : dataset){
+            if (pair.status == 0){
+                suspicious.push_back(pair);
+            }
+            else if (pair.status == 1){
+                legitimate.push_back(pair);
+            }
+        }
 
         cout <<"Sorting dataset using Quick Sort..." << endl;
-        sorter.quickSorting(dataset);
+        sorter.quickSorting(suspicious);
+        sorter.quickSorting(legitimate);
 
-        cout << "Writing sorted dataset to: " << outputFilename << endl;
-        sorter.writeDataset(outputFilename, dataset);
+        cout << "Writing sorted dataset to files..." << endl;
+        dataObj.writeDataset("quicksort_suspicious_urls.csv", suspicious);
+        dataObj.writeDataset("quicksort_legitimate_urls.csv", legitimate);
 
         cout << "Sorting completed successfully!" << endl;
     }
 
     else if (choice == 2) {
         string inputFilename = "project3b_data.csv";         // Input file name
-        string outputFilename = "heap_sorted_data_urls.csv";     // Output file name
+        //string outputFilename = "heap_sorted_data_urls.csv";     // Output file name
         DataProcessor dataObj;
         HeapSort sorter;
 
         vector<DataProcessor::DatasetRow> dataset = dataObj.readDataset(inputFilename);
 
+        vector<DataProcessor::DatasetRow> legitimate, suspicious;
+        for (DataProcessor::DatasetRow pair : dataset){
+            if (pair.status == 0){
+                suspicious.push_back(pair);
+            }
+            else if (pair.status == 1){
+                legitimate.push_back(pair);
+            }
+        }
         cout <<"Sorting dataset using Heap Sort..." << endl;
-        sorter.heapSort(dataset);
+        sorter.heapSort(suspicious);
+        sorter.heapSort(legitimate);
 
-        cout << "Writing sorted dataset to: " << outputFilename << endl;
-        dataObj.writeDataset(outputFilename, dataset);
+        cout << "Writing sorted dataset to files..." << endl;
+        dataObj.writeDataset("heapsort_suspicious_urls.csv", suspicious);
+        dataObj.writeDataset("heapsort_legitimate_urls.csv", legitimate);
 
         cout << "Sorting completed successfully!" << endl;
 

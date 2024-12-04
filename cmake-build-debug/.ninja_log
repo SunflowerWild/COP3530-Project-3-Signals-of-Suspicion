@@ -1,10 +1,22 @@
 # ninja log v6
-1	542	7549578909807009	build.ninja	8cc2f3edbb23e958
 50	1003	7549543949297846	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/quicksort.cpp.obj	3171d45117e7fc2e
-34	838	7549543949150327	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	5ae735298dae328b
-61	916	7549543949408576	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/heapsort.cpp.obj	c1c7797c355bbc71
-1003	1492	7549543958833891	COP3530_Project_3_Signals_of_Suspicion.exe	820c8db08bc54c3d
-17	758	7549579939034468	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/heapsort.cpp.obj	c1c7797c355bbc71
+1	542	7549844603116242	build.ninja	8cc2f3edbb23e958
 4	837	7549579938902124	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	5ae735298dae328b
 29	892	7549579939146747	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/dataprocessor.cpp.obj	472fc5e33bf2f8b8
+17	758	7549579939034468	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/heapsort.cpp.obj	c1c7797c355bbc71
 892	1423	7549579947785676	COP3530_Project_3_Signals_of_Suspicion.exe	dcf86182703b1656
+6	998	7549844603116242	build.ninja	8cc2f3edbb23e958
+36	1083	7549844605285294	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	5ae735298dae328b
+50	1102	7549844605430487	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/heapsort.cpp.obj	c1c7797c355bbc71
+64	1188	7549844605569364	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/dataprocessor.cpp.obj	472fc5e33bf2f8b8
+1188	1625	7549844616804375	COP3530_Project_3_Signals_of_Suspicion.exe	dcf86182703b1656
+6	1055	7549869056273551	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	5ae735298dae328b
+1056	1520	7549869066769591	COP3530_Project_3_Signals_of_Suspicion.exe	dcf86182703b1656
+84	1158	7550289888377038	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	5ae735298dae328b
+130	1163	7550289888865849	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/quicksort.cpp.obj	3171d45117e7fc2e
+1164	1807	7550289899165745	COP3530_Project_3_Signals_of_Suspicion.exe	dcf86182703b1656
+8	1021	7550301188227440	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/heapsort.cpp.obj	c1c7797c355bbc71
+1022	1605	7550301198357004	COP3530_Project_3_Signals_of_Suspicion.exe	dcf86182703b1656
+25	819	7550318847716466	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/heapsort.cpp.obj	c1c7797c355bbc71
+8	911	7550318847551742	CMakeFiles/COP3530_Project_3_Signals_of_Suspicion.dir/main.cpp.obj	5ae735298dae328b
+912	1354	7550318856575182	COP3530_Project_3_Signals_of_Suspicion.exe	dcf86182703b1656

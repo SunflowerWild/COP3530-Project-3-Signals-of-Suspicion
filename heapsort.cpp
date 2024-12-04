@@ -14,61 +14,36 @@ using namespace std;
 // Parameters: Aman's Discussion 6 Slides-Heaps & Priority Queues, Slide #71
 void HeapSort::heapifyDown(vector<DataProcessor::DatasetRow>& arr, int size, int index){
 
-    // "index" moves down the heap to restore the proper form.
-
     // Calculations: Aman's Slide 5-Heaps, Slide #24
-    // Left child
-    int leftIndex = 2 * index + 1;
-    // Right child
-    int rightIndex = 2 * index + 2;
 
-    // Case 1: Left child valid, Right child INVALID.
-    if (leftIndex < size && rightIndex >= size){
-        // Left child must be greater than the parent value.
-        if (arr[leftIndex].url > arr[index].url){
-            // Left child VALUE moves up.
-            // Left child INDEX now holds parent VALUE, which moved down.
-            // Use this index to continue down the heap.
-            swap(arr[index], arr[leftIndex]);
-            heapifyDown(arr, size, leftIndex);
-        }
-        // Else, no swap. Heap is in proper form.
+    int largest = index; // Initialize the largest URL as root
+    int leftIndex = 2 * index + 1; // Left child index
+    int rightIndex = 2 * index + 2; // Right child index
+
+    // Check if left child exists (Is it a valid index in arr?)
+    // Check if the left child is greater than the current largest/parent.
+    if (leftIndex < size && arr[leftIndex].url > arr[largest].url) {
+        largest = leftIndex;
     }
-        // Case 2: Right child is valid, Left child INVALID.
-    else if (rightIndex < size && leftIndex >= size){
-        // Right child must be greater than the value index.
-        if (arr[rightIndex].url > arr[index].url){
-            // Right child VALUE moves up.
-            // Right child INDEX now holds parent VALUE, which moved down.
-            // Use this index to continue down the heap.
-            swap(arr[index], arr[rightIndex]);
-            heapifyDown(arr, size, rightIndex);
-        }
-        // Else, no swap. Heap is in proper form.
+
+    // Check if right child exists (Is it a valid index in arr?)
+    // Check if the right child is greater than current largest/parent.
+    if (rightIndex < size && arr[rightIndex].url > arr[largest].url) {
+        largest = rightIndex;
     }
-        // Case 3: Left and Right children are VALID.
-    else if (leftIndex < size && rightIndex < size){
-        // Left child is the greater child.
-        // Left child is greater than the parent value.
-        if (arr[leftIndex].url > arr[index].url &&
-            arr[leftIndex].url > arr[rightIndex].url) {
-            // Swap with Left child, heapifyDown.
-            swap(arr[index], arr[leftIndex]);
-            heapifyDown(arr, size, leftIndex);
-        }
-            // Right child is the greater child.
-            // Right child is greater than the parent value.
-        else if (arr[rightIndex].url > arr[index].url &&
-                 arr[rightIndex].url > arr[leftIndex].url) {
-            // Swap parent with Right child, heapifyDown.
-            swap(arr[index], arr[rightIndex]);
-            heapifyDown(arr, size, rightIndex);
-        }
-        // Else, no swap. Heap is in proper form.
-    }
-        // Neither child has a valid index. The heap is in proper form.
-    else {
-        return;
+
+    // NOTE: Duplicate Value handling
+    // If both children are equal to the parent, no swap occurs.
+    // The largest index remains unchanged.
+    // If one child is larger than parent, then swap occurs below.
+    // The largest index does change.
+
+    // Is the current node in the correct position in the heap?
+    // The current node (index) must be swapped with the larger child (largest)
+    // if they are not the same.
+    if (largest != index) {
+        swap(arr[index], arr[largest]); // Ensures parent node is >= children
+        heapifyDown(arr, size, largest);    // Restores heap property down the tree
     }
 }
 

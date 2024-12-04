@@ -3,77 +3,10 @@
 //
 
 #include "quicksort.h"
-
-// Function to clean a string by removing corrupted characters
-string QuickSort::cleanString(const string& str) {
-    string cleaned;
-    for (char c : str) {
-        if (isprint(c) || c == '\n') { // Allow printable characters and newlines
-            cleaned += c;
-        }
-    }
-    return cleaned;
-}
-
-// Function to read dataset from a CSV file
-vector <QuickSort::DatasetRow> QuickSort::readDataset(const string& inputFilename) {
-    vector<QuickSort ::DatasetRow> dataset;
-    ifstream file(inputFilename);
-    if (!file.is_open()) {
-        cerr << "Error: Could not open file " << inputFilename << endl;
-        exit(EXIT_FAILURE);
-    }
-
-    string line, combinedLine;
-    while (getline(file, line)) {
-        line = cleanString(line); // Clean corrupted characters
-        if (count(line.begin(), line.end(), ',') < 1) {
-            combinedLine += line; // Append incomplete line
-            continue;
-        }
-
-        if (!combinedLine.empty()) {
-            line = combinedLine + line; // Combine with previous incomplete line
-            combinedLine.clear();
-        }
-
-        size_t commaPos = line.rfind(',');
-        if (commaPos != string::npos) {
-            string url = line.substr(0, commaPos);
-            string statusStr = line.substr(commaPos + 1);
-
-            try {
-                int status = stoi(statusStr); // Parse status as integer
-                dataset.push_back({url, status});
-            } catch (const exception& e) {
-                cerr << "Warning: Malformed row, skipping: " << line << endl;
-            }
-        } else {
-            cerr << "Warning: Malformed row, skipping: " << line << endl;
-        }
-    }
-
-    file.close();
-    return dataset;
-}
-
-// Function to write sorted dataset to a CSV file
-void QuickSort:: writeDataset(const string& filename, const vector<DatasetRow>& dataset) {
-    ofstream file(filename);
-    if (!file.is_open()) {
-        cerr << "Error: Could not open file " << filename << " for writing." << endl;
-        exit(EXIT_FAILURE);
-    }
-
-    for (const auto& row : dataset) {
-        file << row.url << "," << row.status << "\n";
-    }
-
-    file.close();
-}
+#include "dataprocessor.h"
 
 // Iterative Quick Sort implementation
-void QuickSort::quickSorting(vector<DatasetRow>& data) {
+void QuickSort::quickSorting(vector<DataProcessor::DatasetRow>& data) {
     stack<pair<int, int>> stack; // Stack to store low and high indices
     stack.push({0, (int)data.size() - 1});
 
