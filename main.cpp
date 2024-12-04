@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <limits>
+#include <chrono>
 #include "quicksort.h"
 #include "heapsort.h"
 #include "dataprocessor.h"
@@ -50,6 +51,7 @@ int main() {
             }
 
             cout <<"Sorting dataset using Quick Sort..." << endl;
+            auto start1 = std::chrono::high_resolution_clock::now();
             sorter.quickSorting(suspicious);
             sorter.quickSorting(legitimate);
 
@@ -57,7 +59,10 @@ int main() {
             dataObj.writeDataset("quicksort_suspicious_urls.csv", suspicious);
             dataObj.writeDataset("quicksort_legitimate_urls.csv", legitimate);
 
+            auto end1 = std::chrono::high_resolution_clock::now();
             cout << "Sorting completed successfully!" << endl;
+            std::chrono::duration<double> duration1 = end1 - start1;
+            std::cout << "Quick Sort took: " << duration1.count() << " seconds" << std::endl;
         }
 
         else if (choice == 2) {
@@ -77,6 +82,7 @@ int main() {
                 }
             }
             cout <<"Sorting dataset using Heap Sort..." << endl;
+            auto start2 = std::chrono::high_resolution_clock::now();
             sorter.heapSort(suspicious);
             sorter.heapSort(legitimate);
 
@@ -84,7 +90,10 @@ int main() {
             dataObj.writeDataset("heapsort_suspicious_urls.csv", suspicious);
             dataObj.writeDataset("heapsort_legitimate_urls.csv", legitimate);
 
+            auto end2 = std::chrono::high_resolution_clock::now();
             cout << "Sorting completed successfully!" << endl;
+            std::chrono::duration<double> duration2 = end2 - start2;
+            std::cout << "Heap Sort took: " << duration2.count() << " seconds" << std::endl;
 
         }
 
