@@ -73,6 +73,8 @@ void HeapSort::heapifyDown(vector<DataProcessor::DatasetRow>& arr, int size, int
 }
 
 void HeapSort::heapSort(vector<DataProcessor::DatasetRow>& arr) {
+    // Conceptual: Aman's Slide 5-Heaps, Slide #44-47
+
     // Get the number of elements in the vector
     int n = arr.size();
 
