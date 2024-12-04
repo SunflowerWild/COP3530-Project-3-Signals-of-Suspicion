@@ -4,7 +4,7 @@ The input dataset is expected to be in a CSV format, where each row contains a U
 
 <H1>Features</h1>
 1. Quick Sort and Heap Sort Implementation: Compare the performance of Quick Sort and Heap Sort algorithms.
-2.  Data: Separate URLs into "legitimate" and "suspicious" categories.
+2. Data: Separate URLs into "legitimate" and "suspicious" categories.
 3. Output to CSV Files: Save sorted data into files for further analysis.
 4. C++ Compiler: Ensure you have a C++17-compatible compiler (e.g., GCC, Clang, or MSVC).
 5. Input File: The program expects a CSV file named project3b_data.csv in the root directory.
