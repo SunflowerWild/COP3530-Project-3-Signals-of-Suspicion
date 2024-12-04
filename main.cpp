@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <limits>
 #include "quicksort.h"
 #include "heapsort.h"
 #include "dataprocessor.h"
@@ -17,7 +18,6 @@ void displayMenu() {
     cout << "2. Heap Sort" << endl;
     cout << "3. Exit" << endl;
     cout << "=================================" << endl;
-
 }
 
 int main() {
@@ -94,6 +94,10 @@ int main() {
 
         else {
             cout << "That is an invalid input." << endl;
+            // Error handling avoids infinite loop.
+            cin.clear(); // Clear the error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignore the invalid input
+
         }
 
     } while (choice != 3);
