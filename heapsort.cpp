@@ -27,7 +27,7 @@ void HeapSort::heapifyDown(vector<DataProcessor::DatasetRow>& arr, int size, int
     }
 
     // Check if right child exists (Is it a valid index in arr?)
-    // Check if the right child is greater than current largest/parent.
+    // Check if the right child is greater than current largest (parent or left child).
     if (rightIndex < size && arr[rightIndex].url > arr[largest].url) {
         largest = rightIndex;
     }
@@ -43,7 +43,7 @@ void HeapSort::heapifyDown(vector<DataProcessor::DatasetRow>& arr, int size, int
     // if they are not the same.
     if (largest != index) {
         swap(arr[index], arr[largest]); // Ensures parent node is >= children
-        heapifyDown(arr, size, largest);    // Restores heap property down the tree
+        heapifyDown(arr, size, largest);    // Restores heap property down the affected subtree
     }
 }
 
@@ -54,19 +54,22 @@ void HeapSort::heapSort(vector<DataProcessor::DatasetRow>& arr) {
     int n = arr.size();
 
     // Build a max heap from the input array
-    // Start from the last non-leaf node and heapify down to the root
+    // Zero-indexed array representation of binary tree
+    // Last non-leaf node is at index n/2-1.
+    // Start from the last non-leaf node and move upwards towards the root
     for (int i = n / 2 - 1; i >= 0; i--) {
-        heapifyDown(arr, n, i); // Check the subtree rooted at index i is a max heap
+        // Check nodes that could violate max heap property
+        // Fix heap violations as we go so that non-leaf node children already satisfy property
+        heapifyDown(arr, n, i);
     }
 
     // Extract elements from the heap one by one
-    // The largest element (root of the heap) is moved to the end of the array
     for (int i = n - 1; i > 0; i--) {
         // Move the current root (largest element) to the end of the array
         swap(arr[0], arr[i]);
 
-        // Call heapifyDown on the reduced heap to maintain the max heap property
-        // The size of the heap is reduced by one (i)
+        // As the heap gets smaller/reduces, maintain the max heap property.
+        // Reduce the size of the heap by 1, or i
         heapifyDown(arr, i, 0);
     }
 }
